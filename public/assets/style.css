@@ -47,3 +47,14 @@ body {
   margin-top: 20px;
   font-size: 18px;
 }
+
+.map {
+  color: #333;
+}
+a {
+  text-decoration: none;
+  color: #eee;
+}
+a:hover {
+  text-decoration: underline;
+}
