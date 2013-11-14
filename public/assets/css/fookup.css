@@ -209,7 +209,7 @@ i.service-icon {
 
 .call-to-action {
   color: #ffffff;
-  background: #0a5175;
+  background: #8f090c;
   padding: 50px 0;
 }
 
@@ -244,6 +244,16 @@ i.scroll {
 
 i.scroll:hover {
   color: #0a5175;
+}
+
+/* Bootstrap Override */
+
+a {
+  color: #E26464
+}
+
+a:hover, a:focus {
+  color: #E26464
 }
 
 /* Responsive */
