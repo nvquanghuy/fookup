@@ -34,13 +34,19 @@ body {
   text-shadow: 0px 2px 8px rgba(0, 0, 0, 0.5);
 }
 
-/* Side Menu */
+/* Button */
 
 .btn-red {
   color: #ffffff;
   background-color: #c41411;
   border-color: #8f090c;
 }
+
+/* Typography */
+.color-red {
+  color: #c41411;
+}
+
 
 /* Side Menu */
 
