@@ -36,6 +36,14 @@ body {
 
 /* Side Menu */
 
+.btn-red {
+  color: #ffffff;
+  background-color: #c41411;
+  border-color: #8f090c;
+}
+
+/* Side Menu */
+
 #sidebar-wrapper {
   margin-right: -250px;
   right: 0;
