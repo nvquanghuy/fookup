@@ -265,6 +265,7 @@ i.scroll:hover {
 h2 {
   font-family: 'Lobster', "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-weight: 400;
+  margin-bottom: 20px;
 }
 
 a {
