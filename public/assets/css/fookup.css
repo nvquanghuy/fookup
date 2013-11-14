@@ -34,6 +34,33 @@ body {
   text-shadow: 0px 2px 8px rgba(0, 0, 0, 0.5);
 }
 
+/* Button */
+
+.btn-red {
+  color: #ffffff;
+  background-color: #c41411;
+  border-color: #8f090c;
+}
+
+/* Typography */
+.color-red {
+  color: #c41411;
+}
+
+.color-grey {
+  color: #A3A3A3;
+}
+
+.photo-caption {
+  font-size: 14px;
+  color: white;
+  background-color: #8f090c;
+  padding: 10px 0;
+  max-width: 300px;
+  max-width: 500px;
+  margin: 0 auto;
+}
+
 /* Side Menu */
 
 #sidebar-wrapper {
@@ -195,7 +222,7 @@ i.service-icon {
 
 .call-to-action {
   color: #ffffff;
-  background: #0a5175;
+  background: #8f090c;
   padding: 50px 0;
 }
 
@@ -212,7 +239,8 @@ i.service-icon {
 /* Footer */
 
 footer {
-  padding: 100px 0;
+  padding-bottom: 50px;
+  font-size: 12px;
 }
 
 .top-scroll {
@@ -232,12 +260,41 @@ i.scroll:hover {
   color: #0a5175;
 }
 
+/* Bootstrap Override */
+
+p {
+  color: #5F5F5F;
+}
+
+h2 {
+  font-family: 'Lobster', "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-weight: 400;
+  margin-bottom: 20px;
+  font-size: 32px;
+}
+
+h3 {
+  font-size: 22px;
+}
+
+a {
+  color: #E26464
+}
+
+a:hover, a:focus {
+  color: #E26464
+}
+
 /* Responsive */
 
 @media (max-width: 768px) {
 
   .header {
-    background: url(../goicuon-lores.jpg) no-repeat center center scroll;
+    background: url(../goicuon-lores.jpg) no-repeat center center fixed;
+  }
+
+  .vert-text h1 {
+    padding: 0;
   }
 
   .callout {
