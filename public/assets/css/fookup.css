@@ -47,6 +47,15 @@ body {
   color: #c41411;
 }
 
+.photo-caption {
+  font-size: 14px;
+  color: white;
+  background-color: #8f090c;
+  padding: 10px 0;
+  max-width: 300px;
+  max-width: 500px;
+  margin: 0 auto;
+}
 
 /* Side Menu */
 
@@ -226,7 +235,8 @@ i.service-icon {
 /* Footer */
 
 footer {
-  padding: 100px 0;
+  padding-bottom: 50px;
+  font-size: 12px;
 }
 
 .top-scroll {
