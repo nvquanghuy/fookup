@@ -183,7 +183,9 @@ var FoodCtrl = function ($scope, $http) {
       onselect: function (obj) {
         marker_id = jQuery.inArray(obj, $scope.markerTitles);
         if (marker_id > -1) {
-          map.panTo(gmarkers[marker_id].getPosition());
+          ps = gmarkers[marker_id].getPosition();
+          var adjusted_ps = new google.maps.LatLng(ps.lat() + 0.008, ps.lng());
+          map.panTo(adjusted_ps);
           map.setZoom(15);
           google.maps.event.trigger(gmarkers[marker_id], 'click');
         }
