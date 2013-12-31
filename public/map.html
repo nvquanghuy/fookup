@@ -60,15 +60,7 @@
       </a>
     </div>
     <div class="left">
-      <div class='title-wrapper'>
-        <h1>
-          Vietnamese Restaurants in Singapore
-        </h1>
-      </div>
-      <div class="search">
-        <input type="text" name="search" id="search" placeholder="Search for restaurants..."
-          data-provide="typeahead" autocomplete="off"/>
-      </div>
+      <div class='title-wrapper'><h1> Vietnamese Restaurants in Singapore </h1></div>
     </div>
   </div>
 </div>
@@ -80,18 +72,19 @@
 <!-- right-side gutter -->
 <div class="menu" id="menu">
   <ul class="list" id="list">
+    <li class='search-wrapper'>
+      <input type="text" ng-model="filterTerm" id="filter" placeholder="Search restaurants..." autocomplete="off"/>
+    </li>
     <li class='category'>
-      <div class="category_item">
-        <ul class='list-items'>
-          <li ng-repeat="item in restaurants">
-            <a href='#' onMouseOver="markerListMouseOver('{{item.id}}')" onMouseOut="markerListMouseOut('{{item.id}}')"
-               onClick="goToMarker('{{item.id}}')">
-              <img src="/assets/map/img/marker.png" style="width: 16px" alt=''/>
-              {{item.title}}
-            </a>
-          </li>
-        </ul>
-      </div>
+      <ul class='list-items'>
+        <li ng-repeat="item in restaurants" ng-show="!isFiltering() || filterMatch(filterTerm, item.title)">
+          <a href='#' onMouseOver="markerListMouseOver('{{item.id}}')" onMouseOut="markerListMouseOut('{{item.id}}')"
+             onClick="goToMarker('{{item.id}}')">
+            <img src="/assets/map/img/marker.png" style="width: 16px" alt=''/>
+            {{item.title}}
+          </a>
+        </li>
+      </ul>
     </li>
     <li class="blurb">This map is made to show case the Vietnamese Restaurants in Singapore</li>
     <li class="attribution">
@@ -126,7 +119,6 @@
 <script src="/assets/js/jquery.js" type="text/javascript" charset="utf-8"></script>
 <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.0.7/angular.min.js"></script>
 <script src="/assets/map/bootstrap.min.js" type="text/javascript" charset="utf-8"></script>
-<script src="/assets/map/bootstrap-typeahead.js" type="text/javascript" charset="utf-8"></script>
 <script type="text/javascript" src="//maps.googleapis.com/maps/api/js?sensor=false&libraries=places"></script>
 <script type="text/javascript" src="/assets/map/label.js"></script>
 

@@ -22,7 +22,6 @@ var FoodCtrl = function ($scope, $http) {
   };
 
   loadLocateBox = function (map) {
-    console.log('Loading locate box...');
     var input = $('#locate')[0];
     map.controls[google.maps.ControlPosition.TOP_LEFT].push(input);
 
@@ -134,8 +133,9 @@ var FoodCtrl = function ($scope, $http) {
         google.maps.event.addListener(marker, "mouseover", function () {
           this.old_ZIndex = this.getZIndex();
           this.setZIndex(9999);
-          $("#marker" + i).css("display", "inline");
-          $("#marker" + i).css("z-index", "99999");
+          var markerElement = $('#marker' + i);
+          markerElement.css("display", "inline");
+          markerElement.css("z-index", "99999");
         });
         google.maps.event.addListener(marker, "mouseout", function () {
           if (this.old_ZIndex && map.getZoom() <= 15) {
@@ -182,26 +182,17 @@ var FoodCtrl = function ($scope, $http) {
       label.bindTo('clickable', marker);
       label.bindTo('zIndex', marker);
     });
-
-
-    // zoom to marker if selected in search typeahead list
-    $('#search').typeahead({
-      source: $scope.markerTitles,
-      onselect: function (obj) {
-        marker_id = jQuery.inArray(obj, $scope.markerTitles);
-        if (marker_id > -1) {
-          ps = gmarkers[marker_id].getPosition();
-          var adjusted_ps = new google.maps.LatLng(ps.lat() + 0.008, ps.lng());
-          map.panTo(adjusted_ps);
-          map.setZoom(15);
-          google.maps.event.trigger(gmarkers[marker_id], 'click');
-        }
-        $("#search").val("");
-      }
-    });
   }
 
-}
+  $scope.filterMatch = function(term, title) {
+    return title.toLowerCase().indexOf(term) != -1;
+  }
+
+  $scope.isFiltering = function() {
+    return (!!$scope.filterTerm) && ($scope.filterTerm.length > 0)
+  }
+
+} // end controller
 
 // detect browser agent
 $(document).ready(function () {
