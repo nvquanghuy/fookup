@@ -19,15 +19,6 @@ var FoodCtrl = function ($scope, $http) {
   ];
   $scope.markerTitles = [];
 
-  $scope.restaurantCount = function (type) {
-    // TODO: Can be replaced into functional programming (reduce)
-    var count = 0;
-    $.each($scope.restaurants, function (i, r) {
-      if (r.type == type) count++;
-    });
-    return count;
-  }
-
   // initialize map
   $scope.init = function () {
     // set map options
@@ -109,7 +100,7 @@ var FoodCtrl = function ($scope, $http) {
       }
 
       // build this marker
-      var markerImage = new google.maps.MarkerImage("/assets/map/img/icons/" + val.type + ".png", null, null, null, iconSize);
+      var markerImage = new google.maps.MarkerImage("/assets/map/img/marker.png", null, null, null, iconSize);
       var marker = new google.maps.Marker({
         position: new google.maps.LatLng(val.lat, val.lng),
         map: map,
@@ -299,15 +290,6 @@ function goToMarker(marker_id) {
   }
 }
 
-// toggle (hide/show) markers of a given type (on the map)
-function toggle(type) {
-  if ($('#filter_' + type).is('.inactive')) {
-    show(type);
-  } else {
-    hide(type);
-  }
-}
-
 // hide all markers of a given type
 function hide(type) {
   for (var i = 0; i < gmarkers.length; i++) {
@@ -327,12 +309,6 @@ function show(type) {
   }
   $("#filter_" + type).removeClass("inactive");
 }
-
-// toggle (hide/show) marker list of a given type
-function toggleList(type) {
-  $("#list .list-" + type).toggle();
-}
-
 
 // hover on list item
 function markerListMouseOver(marker_id) {

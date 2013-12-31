@@ -51,10 +51,12 @@
     </div>
     <div class="left">
       <div class="logo">
-        <img src="/assets/map/img/logo-web.png"/>
-        <a href="./">
-          Vietnamese Restaurants in Singapore
+        <a href="/">
+          <img src="/assets/map/img/logo-web.png"/>
         </a>
+        <h1>
+          Vietnamese Restaurants in Singapore
+        </h1>
       </div>
       <div class="buttons">
         <a href="#modal_info" class="btn btn-large btn-info" data-toggle="modal"><i class="icon-info-sign icon-white"></i>About this Map</a>
@@ -69,17 +71,12 @@
 <!-- right-side gutter -->
 <div class="menu" id="menu">
   <ul class="list" id="list">
-    <li class='category' ng-repeat="type in types">
+    <li class='category'>
       <div class="category_item">
-        <div class="category_toggle" onclick="toggle('{{type.id}}')" id="filter_{{type.id}}">&nbsp;
-        </div>
-        <a href='#' onclick="toggleList('{{type.id}}');" class='category_info'>
-          <img src='/assets/map/img/icons/{{type.id}}.png' alt='' />{{type.title}}
-          <span class='total'>({{restaurantCount(type.id)}})</span>
-        </a>
-        <ul class='list-items list-{{type.id}}'>
-          <li class='{{type.id}}' ng-repeat="item in restaurants | filter:{type: type.id}">
+        <ul class='list-items'>
+          <li ng-repeat="item in restaurants">
             <a href='#' onMouseOver="markerListMouseOver('{{item.id}}')" onMouseOut="markerListMouseOut('{{item.id}}')" onClick="goToMarker('{{item.id}}')">
+              <img src="/assets/map/img/marker.png" style="width: 16px" alt='' />
               {{item.title}}
             </a>
           </li>

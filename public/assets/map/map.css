@@ -86,10 +86,10 @@ html, body, #map_canvas
   float: left;
   line-height: 60px;
 }
-.topbar .logo a
+.topbar .logo h1
 {
   display: inline-block;
-  color: gray;
+  color: #802225;
   text-decoration: none;
   font-size: 14pt;
   float: left;
@@ -299,10 +299,6 @@ html, body, #map_canvas
   background-repeat: no-repeat;
   width: 30px;
 }
-.list .list-items
-{
-  display: none;
-}
 .list .list-items li
 {
   border-top: 1px solid rgba(255,255,255,.03);
@@ -473,20 +469,6 @@ html, body, #map_canvas
   display: inline-block;
   vertical-align: middle;
   margin: 10px;
-}
-
-
-/* choose submission method modal (only visible if Startup Genome integration is enabled) */
-#modal_add_choose ul li em
-{
-  display: block;
-  font-weight: bold;
-  font-style: normal;
-  margin-bottom: .5em;
-}
-#modal_add_choose ul li
-{
-  margin-top: 25px;
 }
 
 /* error overlay */
