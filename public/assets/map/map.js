@@ -6,59 +6,72 @@ var agent = "default";
 var zoomControl = true;
 var markers = [];
 
-function gsGet(record, key) {
-  return record[('gsx$' + key)]['$t'];
-}
-
 var FoodCtrl = function ($scope, $http) {
   $scope.restaurants = [];
-  $scope.types = [
-    {id: 'inexpensive', title: 'Inexpensive'},
-    {id: 'moderate', title: 'Moderate'},
-    {id: 'hiend', title: 'Hi-end'}
-  ];
   $scope.markerTitles = [];
 
-  // initialize map
   $scope.init = function () {
-    // set map options
-    var myOptions = {
-      zoom: 12,
-      //minZoom: 10,
-      center: new google.maps.LatLng(defaultLat, defaultLng),
-      mapTypeId: google.maps.MapTypeId.ROADMAP,
-      streetViewControl: false,
-      mapTypeControl: false,
-      panControl: false,
-      zoomControl: zoomControl,
-      styles: mapStyles,
-      zoomControlOptions: {
-        style: google.maps.ZoomControlStyle.SMALL,
-        position: google.maps.ControlPosition.LEFT_CENTER
+    map = new google.maps.Map(document.getElementById('map_canvas'), mapOptions());
+    infowindow = new google.maps.InfoWindow({ content: "holding..." });
+    showMarkerOnlyWhenZoomed(map);
+    loadRestaurants(map);
+    loadLocateBox(map);
+  };
+
+  loadLocateBox = function (map) {
+    console.log('Loading locate box...');
+    var input = $('#locate')[0];
+    map.controls[google.maps.ControlPosition.TOP_LEFT].push(input);
+
+    var searchBox = new google.maps.places.SearchBox(input);
+    var markers = [];
+
+    google.maps.event.addListener(searchBox, 'places_changed', function () {
+      var places = searchBox.getPlaces();
+
+      for (var i = 0, marker; marker = markers[i]; i++) marker.setMap(null);
+
+      // For each place, get the icon, place name, and location.
+      markers = [];
+      var bounds = new google.maps.LatLngBounds();
+      for (var i = 0, place; place = places[i]; i++) {
+        var image = {
+          url: place.icon,
+          size: new google.maps.Size(71, 71),
+          origin: new google.maps.Point(0, 0),
+          anchor: new google.maps.Point(17, 34),
+          scaledSize: new google.maps.Size(25, 25)
+        };
+
+        // Create a marker for each place.
+        var marker = new google.maps.Marker({
+          map: map,
+          icon: image,
+          title: place.name,
+          position: place.geometry.location
+        });
+        markers.push(marker);
+        bounds.extend(place.geometry.location);
       }
-    };
-    map = new google.maps.Map(document.getElementById('map_canvas'), myOptions);
-    zoomLevel = map.getZoom();
 
-    // prepare infowindow
-    infowindow = new google.maps.InfoWindow({
-      content: "holding..."
+      map.fitBounds(bounds); map.setZoom(15);
     });
+  };
 
+  showMarkerOnlyWhenZoomed = function (map) {
     // only show marker labels if zoomed in
     google.maps.event.addListener(map, 'zoom_changed', function () {
-      zoomLevel = map.getZoom();
-      if (zoomLevel <= 15) {
+      if (map.getZoom() <= 15) {
         $(".marker_label").css("display", "none");
       } else {
         $(".marker_label").css("display", "inline");
       }
     });
+  };
 
+  loadRestaurants = function (map) {
     var jsonUrl = 'https://spreadsheets.google.com/feeds/list/0AhOYW86nDMmBdDdaUXdhV1dSX0dWNG9TR0twbElEUVE/od6/public/values?alt=json-in-script&callback=JSON_CALLBACK';
     $http.jsonp(jsonUrl).success(function (response) {
-      // 233 Quan An Vietnam,Singapore 427491 ,233 Joo Chiat Road Singapore,1.31101,103.901287,hiend
-      // title, postal_coe, addr, lat, lng, type
       $.each(response.feed.entry, function (i, record) {
         var place = {
           id: i,
@@ -75,11 +88,11 @@ var FoodCtrl = function ($scope, $http) {
         $scope.markerTitles.push(place.title);
       });
 
-      $scope.processMarkers($scope.restaurants);
+      $scope.processMarkers(map, $scope.restaurants);
     });
-  };
+  }
 
-  $scope.processMarkers = function (markers) {
+  $scope.processMarkers = function (map, markers) {
     // add markers
     $.each(markers, function (i, val) {
       infowindow = new google.maps.InfoWindow({
@@ -122,7 +135,7 @@ var FoodCtrl = function ($scope, $http) {
           $("#marker" + i).css("z-index", "99999");
         });
         google.maps.event.addListener(marker, "mouseout", function () {
-          if (this.old_ZIndex && zoomLevel <= 15) {
+          if (this.old_ZIndex && map.getZoom() <= 15) {
             this.setZIndex(this.old_ZIndex);
             $("#marker" + i).css("display", "none");
           }
@@ -135,7 +148,6 @@ var FoodCtrl = function ($scope, $http) {
         markerURI = "http://" + markerURI;
       }
       var markerURI_short = markerURI.replace("http://", "");
-      var markerURI_short = markerURI_short.replace("www.", "");
 
       // add marker click effects (open infowindow)
       google.maps.event.addListener(marker, 'click', function () {
@@ -143,6 +155,7 @@ var FoodCtrl = function ($scope, $http) {
         if (val.imageUrl) {
           imageHtml = "<img width='200' src='" + val.imageUrl + "'/>";
         }
+        // TODO: replace with handlebars
         var html =
           "<div class='marker_title'>" + val.title + "</div>" + imageHtml +
             "<div class='marker_uri'>" +
@@ -280,6 +293,22 @@ var mapStyles = [
   }
 ];
 
+mapOptions = function() {
+  return {
+    zoom: 12,
+    center: new google.maps.LatLng(defaultLat, defaultLng),
+    mapTypeId: google.maps.MapTypeId.ROADMAP,
+    streetViewControl: false,
+    mapTypeControl: false,
+    panControl: false,
+    zoomControl: zoomControl,
+    styles: mapStyles,
+    zoomControlOptions: {
+      style: google.maps.ZoomControlStyle.SMALL,
+      position: google.maps.ControlPosition.LEFT_CENTER
+    }
+  };
+}
 
 // zoom to specific marker
 function goToMarker(marker_id) {
@@ -316,4 +345,8 @@ function markerListMouseOver(marker_id) {
 }
 function markerListMouseOut(marker_id) {
   $("#marker" + marker_id).css("display", "none");
+}
+
+function gsGet(record, key) {
+  return record[('gsx$' + key)]['$t'];
 }
