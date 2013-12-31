@@ -1,3 +1,6 @@
+var defaultLat = 1.349134;
+var defaultLng = 103.817711;
+
 var map;
 var infowindow = null;
 var gmarkers = [];
