@@ -333,6 +333,10 @@ html, body, #map_canvas {
 }
 
 /* markers */
+.gm-style .gm-style-iw div {
+  font-weight: normal;
+}
+
 .marker_label {
   display: none;
   position: relative;

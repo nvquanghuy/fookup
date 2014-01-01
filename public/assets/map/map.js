@@ -150,7 +150,10 @@ var FoodCtrl = function ($scope, $http) {
       if (markerURI.substr(0, 7) != "http://") {
         markerURI = "http://" + markerURI;
       }
-      var markerURI_short = markerURI.replace("http://", "");
+      var shortUri = markerURI.replace("http://", "");
+      if (shortUri.length > 30) {
+        shortUri = shortUri.substr(0, 30) + "...";
+      }
 
       // add marker click effects (open infowindow)
       google.maps.event.addListener(marker, 'click', function () {
@@ -160,12 +163,14 @@ var FoodCtrl = function ($scope, $http) {
         }
         // TODO: replace with handlebars
         var html =
+          "<div class='marker-wrapper'>" +
           "<div class='marker_title'>" + val.title + "</div>" + imageHtml +
             "<div class='marker_uri'>" +
-            "<a target='_blank' href='" + markerURI + "'>" + markerURI_short + "</a>" +
+            "<a target='_blank' href='" + markerURI + "'>" + shortUri + "</a>" +
             "</div>" +
             "<div class='marker_desc'>" + val.description + "</div>" +
-            "<div class='marker_address'>" + val.addr + " </div>"
+            "<div class='marker_address'>" + val.addr + " </div>" +
+          "</div>";
         infowindow.setContent(html);
         infowindow.open(map, this);
       });
