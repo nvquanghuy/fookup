@@ -222,9 +222,9 @@ $(window).resize(function () {
 
 $(function() {
   // wait 20 seconds before asking for shares
-  setInterval(function() {
+  setTimeout(function() {
     $('#share_modal').modal('show');
-  }, 20000);
+  }, 30000);
 });
 
 
