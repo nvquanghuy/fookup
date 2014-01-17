@@ -20,9 +20,19 @@
   if (d.getElementById(id)) return;
   js = d.createElement(s);
   js.id = id;
-  js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&appId=421651897866629";
+  js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&appId=102575216454304";
   fjs.parentNode.insertBefore(js, fjs);
 }(document, 'script', 'facebook-jssdk'));</script>
+
+<script>!function (d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (!d.getElementById(id)) {
+    js = d.createElement(s);
+    js.id = id;
+    js.src = "//platform.twitter.com/widgets.js";
+    fjs.parentNode.insertBefore(js, fjs);
+  }
+}(document, "script", "twitter-wjs");</script>
 
 <!-- google map -->
 <div id="map_canvas"></div>
@@ -31,22 +41,6 @@
 <div class="topbar" id="topbar">
   <div class="wrapper">
     <div class="right">
-      <div class="share">
-        <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://fookup.vietnam2020.org"
-           data-text="Cool: Vietnamese Restaurants in Singapore" data-via="iamhuy" data-count="none">Tweet</a>
-        <script>!function (d, s, id) {
-          var js, fjs = d.getElementsByTagName(s)[0];
-          if (!d.getElementById(id)) {
-            js = d.createElement(s);
-            js.id = id;
-            js.src = "//platform.twitter.com/widgets.js";
-            fjs.parentNode.insertBefore(js, fjs);
-          }
-        }(document, "script", "twitter-wjs");</script>
-        <div class="fb-like" data-href="http://fookup.vietnam2020.org/vietnamese-restaurants-singapore/"
-             data-send="false" data-layout="button_count" data-width="100" data-show-faces="false"
-             data-font="arial"></div>
-      </div>
       <div class="buttons">
         <a href="#modal_info" class="btn btn-large btn-info" data-toggle="modal">
           <i class="icon-info-sign icon-white"></i>About this Map
@@ -61,6 +55,16 @@
     </div>
     <div class="left">
       <div class='title-wrapper'><h1> Vietnamese Restaurants in Singapore </h1></div>
+      <div class='share'>
+
+        <div class="fb-share-button" data-href="http://fookup.vietnam2020.org/vietnamese-restaurants-singapore"
+             data-type="button_count"></div>
+
+        <a href="https://twitter.com/share" class="twitter-share-button"
+           data-url="http://fookup.vietnam2020.org/vietnamese-restaurants-singapore"
+           data-text="Wow pretty cool, Vietnamese Restaurants in Singapore" data-count="none">Tweet</a>
+
+      </div>
     </div>
   </div>
 </div>
@@ -86,10 +90,9 @@
         </li>
       </ul>
     </li>
-    <li class="blurb">This map is made to show case the Vietnamese Restaurants in Singapore</li>
     <li class="attribution">
         <span>
-          Based on <a href='http://www.represent.la' target='_blank'>RepresentLA</a>
+          Based on <a href='http://www.represent.la' target='_blank'>RepresentLA</a>. Heavily modified by huy. Source on <a href='https://github.com/nvquanghuy/fookup'>Github</a>.
         </span>
     </li>
   </ul>

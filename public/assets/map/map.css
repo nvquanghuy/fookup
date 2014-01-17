@@ -134,20 +134,6 @@ html, body, #map_canvas {
   margin-right: 15px;
 }
 
-.topbar .share {
-  float: right;
-  line-height: 0px;
-  color: #777;
-  padding: 17px 10px 20px 10px;
-}
-
-.topbar .share div,
-.topbar .share iframe {
-  display: inline-block;
-  vertical-align: middle;
-  margin-right: 2px;
-}
-
 .topbar .share .btn {
   text-shadow: none;
 }
@@ -470,4 +456,24 @@ html, body, #map_canvas {
   display: inline-block;
   vertical-align: middle;
   margin: 10px;
+}
+
+.topbar .share {
+  margin-top: 20px;
+  float: left;
+  margin-left: 60px;
+  line-height: 0px;
+  color: #777;
+  /*padding: 17px 10px 20px 10px;*/
+}
+
+.share .fb-share-button {
+  margin-right: 20px;
+}
+
+.topbar .share div,
+.topbar .share iframe {
+  display: inline-block;
+  vertical-align: middle;
+  margin-right: 2px;
 }
