@@ -21,41 +21,40 @@ var FoodCtrl = function ($scope, $http) {
     loadLocateBox(map);
   };
 
-  loadLocateBox = function (map) {
+  var loadLocateBox = function (map) {
     var input = $('#locate')[0];
     map.controls[google.maps.ControlPosition.TOP_LEFT].push(input);
 
     var searchBox = new google.maps.places.SearchBox(input);
-    var markers = [];
+    var circle = null;
 
     google.maps.event.addListener(searchBox, 'places_changed', function () {
-      var places = searchBox.getPlaces();
+      var place = searchBox.getPlaces()[0];
+      if (place === undefined) return;
+      if (circle !== null && circle !== undefined) circle.setMap(null);
 
-      for (var i = 0, marker; marker = markers[i]; i++) marker.setMap(null);
-
-      // For each place, get the icon, place name, and location.
-      markers = [];
       var bounds = new google.maps.LatLngBounds();
-      for (var i = 0, place; place = places[i]; i++) {
-        var image = {
-          url: place.icon,
-          size: new google.maps.Size(71, 71),
-          origin: new google.maps.Point(0, 0),
-          anchor: new google.maps.Point(17, 34),
-          scaledSize: new google.maps.Size(25, 25)
-        };
+      var image = {
+        url: place.icon,
+        size: new google.maps.Size(71, 71),
+        origin: new google.maps.Point(0, 0),
+        anchor: new google.maps.Point(17, 34),
+        scaledSize: new google.maps.Size(25, 25)
+      };
 
-        // Create a marker for each place.
-        var marker = new google.maps.Marker({
-          map: map,
-          icon: image,
-          title: place.name,
-          position: place.geometry.location
-        });
-        markers.push(marker);
-        bounds.extend(place.geometry.location);
-      }
+      var populationOptions = {
+        strokeColor: '#FF0000',
+        strokeOpacity: 0.2,
+        strokeWeight: 2,
+        fillColor: '#FF0000',
+        fillOpacity: 0.15,
+        map: map,
+        center: place.geometry.location,
+        radius: 1400
+      };
+      circle = new google.maps.Circle(populationOptions);
 
+      bounds.extend(place.geometry.location);
       map.fitBounds(bounds); map.setZoom(15);
     });
   };
