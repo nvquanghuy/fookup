@@ -208,6 +208,8 @@ $(document).ready(function () {
     agent = "ipad";
     zoomControl = false;
   }
+
+
 });
 
 // resize marker list onload/resize
@@ -217,6 +219,16 @@ $(document).ready(function () {
 $(window).resize(function () {
   resizeList();
 });
+
+$(function() {
+  // wait 20 seconds before asking for shares
+  setInterval(function() {
+    $('#share_modal').modal('show');
+  }, 20000);
+});
+
+
+
 
 // resize marker list to fit window
 function resizeList() {
