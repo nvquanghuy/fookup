@@ -86,7 +86,7 @@
         <li ng-repeat="item in restaurants" ng-show="!isFiltering() || filterMatch(filterTerm, item.title)">
           <a href='#' onMouseOver="markerListMouseOver('{{item.id}}')" onMouseOut="markerListMouseOut('{{item.id}}')"
              onClick="goToMarker('{{item.id}}')">
-            <img src="/assets/map/img/marker.png" style="width: 16px" alt=''/>
+            <img src="/assets/map/img/pin-restaurant.png" style="width: 16px" alt=''/>
             {{item.title}}
           </a>
         </li>
