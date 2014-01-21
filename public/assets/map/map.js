@@ -29,6 +29,8 @@ var FoodCtrl = function ($scope, $http) {
     var circle = null;
 
     google.maps.event.addListener(searchBox, 'places_changed', function () {
+      mixpanel.track('Search by Location', {'Location': $('#locate').val()});
+
       var place = searchBox.getPlaces()[0];
       if (place === undefined) return;
       if (circle !== null && circle !== undefined) circle.setMap(null);
@@ -156,6 +158,8 @@ var FoodCtrl = function ($scope, $http) {
 
       // add marker click effects (open infowindow)
       google.maps.event.addListener(marker, 'click', function () {
+        mixpanel.track('Restaurant Click', {'Restaurant': val.title});
+
         var imageHtml = "";
         if (val.imageUrl) {
           imageHtml = "<img width='200' src='" + val.imageUrl + "'/>";
@@ -212,22 +216,25 @@ $(document).ready(function () {
 
 });
 
-// resize marker list onload/resize
-$(document).ready(function () {
-  resizeList()
-});
-$(window).resize(function () {
-  resizeList();
-});
-
 $(function() {
-  // wait 20 seconds before asking for shares
+  resizeList();
+  $(window).resize(resizeList);
+
   setTimeout(function() {
     $('#share_modal').modal('show');
   }, 30000);
+
+  mixpanel.track('Map Load');
+
+  $('#share_modal')
+    .on('show.bs.modal', function (e) { mixpanel.track('Share Dialog Open'); })
+    .on('hide.bs.modal', function (e) { mixpanel.track('Share Dialog Close'); });
+
+  $('#modal_info')
+    .on('show.bs.modal', function (e) { mixpanel.track('About Dialog Open'); })
+    .on('hide.bs.modal', function (e) { mixpanel.track('About Dialog Close'); });
+
 });
-
-
 
 
 // resize marker list to fit window
