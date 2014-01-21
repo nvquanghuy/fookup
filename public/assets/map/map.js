@@ -78,7 +78,6 @@ var FoodCtrl = function ($scope, $http) {
       $.each(response.feed.entry, function (i, record) {
         var place = {
           id: i,
-          type: gsGet(record, 'pricerange'),
           title: gsGet(record, 'name'),
           addr: gsGet(record, 'address'),
           lat: gsGet(record, 'lat'),
@@ -126,7 +125,6 @@ var FoodCtrl = function ($scope, $http) {
         zIndex: 10 + i,
         icon: markerImage
       });
-      marker.type = val.type;
       gmarkers.push(marker);
 
       // add marker hover events (if not viewing on mobile)
@@ -334,26 +332,6 @@ function goToMarker(marker_id) {
     map.setZoom(15);
     google.maps.event.trigger(gmarkers[marker_id], 'click');
   }
-}
-
-// hide all markers of a given type
-function hide(type) {
-  for (var i = 0; i < gmarkers.length; i++) {
-    if (gmarkers[i].type == type) {
-      gmarkers[i].setVisible(false);
-    }
-  }
-  $("#filter_" + type).addClass("inactive");
-}
-
-// show all markers of a given type
-function show(type) {
-  for (var i = 0; i < gmarkers.length; i++) {
-    if (gmarkers[i].type == type) {
-      gmarkers[i].setVisible(true);
-    }
-  }
-  $("#filter_" + type).removeClass("inactive");
 }
 
 // hover on list item
