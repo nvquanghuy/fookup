@@ -226,6 +226,14 @@ i.service-icon {
   padding: 50px 0;
 }
 
+.call-to-action a {
+  color: #ffffff;
+}
+.call-to-action a:hover {
+  color: #ffffff;
+  text-decoration: underline;
+}
+
 .call-to-action .btn {
   margin: 10px;
 }
@@ -307,4 +315,8 @@ a:hover, a:focus {
 
 }
 
-
+img.map {
+  height: auto;
+  width: 600px;
+  margin: 20px auto 0;
+}
