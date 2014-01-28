@@ -30,3 +30,16 @@ map "/vietnamese-restaurants-singapore" do
   }
 end
 
+map "/mon-an-3-mien-ngay-tet" do
+  run lambda { |env|
+    [
+      200,
+      {
+        'Content-Type' => 'text/html',
+        'Cache-Control' => 'public, max-age=86400'
+      },
+      File.open('public/mon-an-3-mien-ngay-tet.html', File::RDONLY)
+    ]
+  }
+end
+
