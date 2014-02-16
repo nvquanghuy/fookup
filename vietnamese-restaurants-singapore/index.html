@@ -7,9 +7,9 @@
 
   <link href='http://fonts.googleapis.com/css?family=Open+Sans+Condensed:700|Open+Sans:400,700' rel='stylesheet'
         type='text/css'>
-  <link href="/assets/map/bootstrap.min.css" rel="stylesheet" type="text/css"/>
-  <link href="/assets/map/bootstrap-responsive.min.css" rel="stylesheet" type="text/css"/>
-  <link rel="stylesheet" href="/assets/map/map.css" type="text/css"/>
+  <link href="./assets/bootstrap.min.css" rel="stylesheet" type="text/css"/>
+  <link href="./assets/bootstrap-responsive.min.css" rel="stylesheet" type="text/css"/>
+  <link rel="stylesheet" href="./assets/map.css" type="text/css"/>
   <meta property="og:image" content="http://i.imgur.com/VRG2hXk.png">
   <meta property="og:description" content="Map of Vietnamese Restaurants in Singapore. Where to find good Vietnamese pho, banh mi, spring roll places?">
 
@@ -62,7 +62,7 @@ mixpanel.init("794b73c96a1afe606f968076c6514fdf");</script><!-- end Mixpanel -->
     </div>
     <div class="logo">
       <a href="/">
-        <img src="/assets/map/img/logo-web.png"/>
+        <img src="./assets/img/logo-web.png"/>
       </a>
     </div>
     <div class="left">
@@ -96,7 +96,7 @@ mixpanel.init("794b73c96a1afe606f968076c6514fdf");</script><!-- end Mixpanel -->
         <li ng-repeat="item in restaurants" ng-show="!isFiltering() || filterMatch(filterTerm, item.title)">
           <a href='#' onMouseOver="markerListMouseOver('{{item.id}}')" onMouseOut="markerListMouseOut('{{item.id}}')"
              onClick="goToMarker('{{item.id}}')">
-            <img src="/assets/map/img/pin-restaurant.png" style="width: 16px" alt=''/>
+            <img src="./assets/img/pin-restaurant.png" style="width: 16px" alt=''/>
             {{item.title}}
           </a>
         </li>
@@ -159,11 +159,11 @@ mixpanel.init("794b73c96a1afe606f968076c6514fdf");</script><!-- end Mixpanel -->
 
 <script src="/assets/js/jquery.js" type="text/javascript" charset="utf-8"></script>
 <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.0.7/angular.min.js"></script>
-<script src="/assets/map/bootstrap.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="./assets/bootstrap.min.js" type="text/javascript" charset="utf-8"></script>
 <script type="text/javascript" src="//maps.googleapis.com/maps/api/js?sensor=false&libraries=places"></script>
-<script type="text/javascript" src="/assets/map/label.js"></script>
+<script type="text/javascript" src="./assets/label.js"></script>
 
-<script type="text/javascript" src="/assets/map/map.js"></script>
+<script type="text/javascript" src="./assets/map.js"></script>
 
 <script>
   (function (i, s, o, g, r, a, m) {

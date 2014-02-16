@@ -115,7 +115,7 @@ var FoodCtrl = function ($scope, $http) {
       }
 
       // build this marker
-      var markerImage = new google.maps.MarkerImage("/assets/map/img/pin-restaurant.png", null, null, null, iconSize);
+      var markerImage = new google.maps.MarkerImage("./assets/img/pin-restaurant.png", null, null, null, iconSize);
       var marker = new google.maps.Marker({
         position: new google.maps.LatLng(val.lat, val.lng),
         map: map,

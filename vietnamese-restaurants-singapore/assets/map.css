@@ -178,7 +178,7 @@ html, body, #map_canvas {
   width: 180px;
   font-size: 8pt;
   padding-left: 26px;
-  background-image: url("./img/icon-search.png");
+  background-image: url("img/icon-search.png");
   background-position: 8px center;
   background-repeat: no-repeat;
 }
@@ -286,7 +286,7 @@ html, body, #map_canvas {
 }
 
 .list .category .category_toggle {
-  background-image: url("./img/icons/check.png");
+  background-image: url("img/icons/check.png");
   background-position: center center;
   background-repeat: no-repeat;
   width: 30px;
