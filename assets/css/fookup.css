@@ -14,6 +14,7 @@ body {
 #logo {
   display: block;
   margin: 0 auto;
+  margin-top: 60px;
 
   z-index: 1;
   width: 200px;
@@ -229,6 +230,7 @@ i.service-icon {
 .call-to-action a {
   color: #ffffff;
 }
+
 .call-to-action a:hover {
   color: #ffffff;
   text-decoration: underline;
@@ -321,6 +323,13 @@ img.map {
   margin: 20px auto 0;
 }
 
-a.white {
+.color-white {
   color: #fff;
+}
+
+.navbar-default .navbar-nav > li > a.hot {
+  font-weight: bold;
+  color: #ff190c; }
+  .navbar-default .navbar-nav > li > a.hot:hover {
+    text-decoration: underline;
 }

@@ -18,28 +18,42 @@
   <link href="assets/font-awesome/css/font-awesome.min.css" rel="stylesheet">
 </head>
 
-<body>
-<!-- Side Menu -->
-<a id="menu-toggle" href="#" class="btn btn-red btn-lg toggle"><i class="fa fa-reorder"></i></a>
+<body data-spy="scroll" data-target=".navbar-default">
 
-<div id="sidebar-wrapper">
-  <ul class="sidebar-nav">
-    <a id="menu-close" href="#" class="btn btn-default pull-right toggle"><i class="fa fa-times"></i></a>
-    <li class="sidebar-brand"><a href="#top">FookUp Competition</a></li>
-    <li><a href="#top">Home</a></li>
-    <li><a href="#about">About FookUp</a></li>
-    <li><a href="#cta">Registration</a></li>
-    <li><a href="#portfolio">Vietnam2020</a></li>
-  </ul>
+<!-- Fixed navbar -->
+<div class="navbar navbar-default navbar-fixed-top" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span></button>
+      <a class="navbar-brand" href="#">FookUp</a>
+    </div>
+    <div class="navbar-collapse collapse">
+      <ul class="nav navbar-nav">
+        <li class="active"><a href="#top">Home</a></li>
+        <li><a href="#about">Program</a></li>
+        <li><a href="#registration">Registration</a></li>
+        <li><a href="#portfolio">About Us</a></li>
+      </ul>
+      <ul class="nav navbar-nav pull-right">
+        <li><a class="hot" target="_blank" href="/vietnamese-restaurants-singapore">
+          <img src="assets/img/fook_icon.png" width="16"/>
+          Click: Map of Vietnamese Restaurants in Singapore!
+        </a></li>
+        <li><a class="hot" target="_blank" href="http://www.facebook.com/fookup.sg">
+          <img src="assets/img/fb_icon_16x16.png"/>
+          Find us on Facebook
+        </a></li>
+      </ul>
+    </div>
+  </div>
 </div>
-<!-- /Side Menu -->
 
 <!-- Full Page Image Header Area -->
 <div id="top" class="header">
-
   <div class="vert-text">
-
-    <img id='logo' src='assets/logo.png'/>
+    <img id='logo' title="FookUp" src='assets/logo.png'/>
 
     <h1>First of its kind Cooking Competition for Vietnamese Community in Singapore</h1>
 
@@ -78,103 +92,36 @@
 
         <hr/>
 
-        <h3>Date and Time:</h3>
-
-        <p>To Be Announced</p>
-
-        <hr/>
-
         <h3>Prizes</h3>
-        To be announced
-
+        <p>To be announced</p>
         <hr/>
-        <h3>Registration Coming Soon</h3>
 
+        <h3>Date and Time</h3>
+        <p>To Be Announced</p>
+        <hr/>
       </div>
     </div>
   </div>
 </div>
 <!-- /Intro -->
 
-<!-- Services -->
-<!--<div id="services" class="services">-->
-<!--<div class="container">-->
-<!--<div class="row">-->
-<!--<div class="col-md-4 col-md-offset-4 text-center">-->
-<!--<h2>Competition Format</h2>-->
-<!--<hr>-->
-<!--</div>-->
-<!--</div>-->
-<!--<div class="row">-->
-<!--<div class="col-md-2 col-md-offset-2 text-center">-->
-<!--<div class="service-item">-->
-<!--<i class="service-icon fa fa-rocket"></i>-->
-<!--<h4>Spacecraft Repair</h4>-->
-
-<!--<p>Did your navigation system shut down in the middle of that asteroid field? We can repair any dings and-->
-<!--scrapes to your spacecraft!</p>-->
-<!--</div>-->
-<!--</div>-->
-<!--<div class="col-md-2 text-center">-->
-<!--<div class="service-item">-->
-<!--<i class="service-icon fa fa-magnet"></i>-->
-<!--<h4>Problem Solving</h4>-->
-
-<!--<p>Need to know how magnets work? Our problem solving solutions team can help you identify problems and-->
-<!--conduct exploratory research.</p>-->
-<!--</div>-->
-<!--</div>-->
-<!--<div class="col-md-2 text-center">-->
-<!--<div class="service-item">-->
-<!--<i class="service-icon fa fa-shield"></i>-->
-<!--<h4>Blacksmithing</h4>-->
-
-<!--<p>Planning a time travel trip to the middle ages? Preserve the space time continuum by blending in with-->
-<!--period accurate armor and weapons.</p>-->
-<!--</div>-->
-<!--</div>-->
-<!--<div class="col-md-2 text-center">-->
-<!--<div class="service-item">-->
-<!--<i class="service-icon fa fa-pencil"></i>-->
-<!--<h4>Pencil Sharpening</h4>-->
-
-<!--<p>We've been voted the best pencil sharpening service for 10 consecutive years. If you have a pencil that-->
-<!--feels dull, we'll get it sharp!</p>-->
-<!--</div>-->
-<!--</div>-->
-<!--</div>-->
-<!--</div>-->
-<!--</div>-->
-<!-- /Services -->
-
-<!-- Call to Action -->
-<div id='cta' class="call-to-action">
+<!-- Intro -->
+<div id="registration" class="call-to-action">
   <div class="container">
     <div class="row">
-      <div class="col-md-6 col-md-offset-3 text-center">
+      <div class="col-md-6 col-md-offset-3">
+        <h2 class='text-center'>Registration</h2>
 
-        <a target="_blank" href='/vietnamese-restaurants-singapore'>
-          <h2>Looking for some Vietnamese food instead? </h2>
-        </a>
+        <p class="color-white">Do like our <a style="font-weight: bold" href="http://www.facebook.com/fookup.sg" target="_blank">Facebook page</a> to get updates about registrations</p>
 
-        <!--<p>-->
-        <!--<a href='/vietnamese-restaurants-singapore' class="btn btn-lg btn-red" disabled="disabled">Check out our <strong>Map of Vietnamese Restaurants in Singapore</strong>!</a>-->
-        <!--</p>-->
+        <iframe src="https://docs.google.com/forms/d/1MybC6dRZ76HcvaflWP0P5nG4yzZxXfsp4kZPoXV_2UI/viewform?embedded=true" width="760" height="500" frameborder="0" marginheight="0" marginwidth="0">Loading...</iframe>
 
-        <p style="text-align: center">
-          <a target="_blank" href='/vietnamese-restaurants-singapore'>
-            <img class="map" src="vietnamese-restaurants-singapore/assets/img/map-screenshot.png"/>
-          </a>
-
-        <div class="photo-caption">Map of Vietnamese Restaurants in Singapore</div>
-
-        </p>
 
       </div>
     </div>
   </div>
 </div>
-<!-- /Call to Action -->
+
 
 
 <!--&lt;!&ndash; Callout &ndash;&gt;-->
