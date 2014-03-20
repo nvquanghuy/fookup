@@ -272,7 +272,7 @@ i.scroll:hover {
 
 /* Bootstrap Override */
 
-p {
+p, li, td {
   color: #5F5F5F;
 }
 
@@ -329,7 +329,13 @@ img.map {
 
 .navbar-default .navbar-nav > li > a.hot {
   font-weight: bold;
-  color: #ff190c; }
+  color: #E26464; }
   .navbar-default .navbar-nav > li > a.hot:hover {
     text-decoration: underline;
 }
+
+
+#about p {
+  text-align: justify;
+}
+#about li { text-align: justify }
