@@ -41,6 +41,13 @@ body {
   color: #ffffff;
   background-color: #c41411;
   border-color: #8f090c;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+a.btn-red:hover {
+  color: #eee;
+  text-decoration: none;
 }
 
 /* Typography */
@@ -208,9 +215,8 @@ i.service-icon {
 /* Portfolio */
 .sponsors {
   padding: 50px 0;
-  border-bottom: 1px solid #39b3d7;
+  border-bottom: 1px solid #c41411;
 }
-
 
 .portfolio {
   padding: 50px 0;
@@ -334,13 +340,21 @@ img.map {
 
 .navbar-default .navbar-nav > li > a.hot {
   font-weight: bold;
-  color: #E26464; }
-  .navbar-default .navbar-nav > li > a.hot:hover {
-    text-decoration: underline;
+  color: #E26464;
 }
 
+.navbar-default .navbar-nav > li > a.hot:hover {
+  text-decoration: underline;
+}
 
 #about p {
   text-align: justify;
 }
-#about li { text-align: justify }
+
+#about li {
+  text-align: justify
+}
+
+#top .cta {
+  padding: 20px 56px;
+}
