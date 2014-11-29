@@ -24,3 +24,18 @@ $(function () {
     }
   });
 });
+
+// Load the classic theme
+Galleria.loadTheme('assets/js/galleria/themes/classic/galleria.classic.min.js');
+
+// Initialize Galleria
+Galleria.run('#galleria', {
+
+    // search flickr for "galleria"
+    flickr: 'set:72157649455672316',
+    
+    flickrOptions: {
+        // sort by interestingness
+        sort: 'interestingness-desc'
+    }
+});

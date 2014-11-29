@@ -13,7 +13,7 @@
   <title>FookUp Competition - Up for Fun Cooking</title>
 
   <!-- Bootstrap core CSS -->
-  <link href="assets/css/bootstrap.css" rel="stylesheet">
+  <link href="assets/css/bootstrap.min.css" rel="stylesheet">
 
   <!-- Add custom CSS here -->
   <link href="assets/css/fookup.css" rel="stylesheet">
@@ -74,7 +74,7 @@
 
     <h1>First of its kind Cooking Competition for Vietnamese Community in Singapore</h1>
 
-    <a href="#about" class="btn btn-default btn-lg cta"><strong>Continue</strong></a>
+    <a href="#about" class="btn btn-default btn-lg cta"><strong>Find out more</strong></a>
 
     <h6 style="margin-top: 40px"><em>An initiative brought to you by Vietnam2020</em></h6>
   </div>
@@ -89,6 +89,8 @@
     <h2 class='text-center color-red'>FookUp - Cooking Competition</h2>
 
     <hr/>
+
+    <h3>Competition Overview</h3>
 
     <p>
       <strong>FookUp</strong> is the first-of-its-kind cooking contest for Vietnamese community in Singapore.
@@ -257,11 +259,22 @@
 
     <hr/>
 
+    <h3>Competition Gallery</h3>
+
+    <div class="layout-section">
+      <div id="galleria"></div>
+    </div> 
+
+    <!-- 16:9 aspect ratio -->
+    <div class="embed-responsive embed-responsive-16by9">
+      <iframe class="embed-responsive-item" src="//www.youtube.com/embed/MUdX-o45DXc" allowfullscreen></iframe>
+    </div>
+
   </div>
   <div class="col-md-3">
     <div class="fb-like-box" data-href="https://www.facebook.com/fookup.sg" data-colorscheme="light"
-         data-show-faces="false" data-header="true" data-stream="true" data-show-border="true"
-         data-height="800px"></div>
+         data-show-faces="false" data-header="false" data-stream="true" data-show-border="false"
+         data-height="1000px"></div>
   </div>
 </div>
 </div>
@@ -443,8 +456,12 @@
   </div>
 </footer>
 
-<script src="assets/js/jquery.js"></script>
-<script src="assets/js/bootstrap.js"></script>
+<script src="assets/js/jquery-1.11.1.min.js"></script>
+<script src="assets/js/bootstrap.min.js"></script>
+<!-- load Galleria -->
+<script src="assets/js/galleria/galleria-1.4.2.min.js"></script>
+<!-- load flickr plugin -->
+<script src="assets/js/galleria/plugins/flickr/galleria.flickr.min.js"></script>
 <script src="assets/js/fookup.js"></script>
 <script src="assets/js/ga.js"></script>
 </body>
