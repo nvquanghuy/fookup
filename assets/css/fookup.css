@@ -35,6 +35,12 @@ body {
   text-shadow: 0px 2px 8px rgba(0, 0, 0, 0.5);
 }
 
+/* Layout */
+
+.layout-section {
+  margin-bottom: 20px
+}
+
 /* Button */
 
 .btn-red {
@@ -304,6 +310,12 @@ a {
 
 a:hover, a:focus {
   color: #E26464
+}
+
+/* This rule is read by Galleria to define the gallery height: */
+
+#galleria{
+  height: 450px;
 }
 
 /* Responsive */
