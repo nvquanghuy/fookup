@@ -36,6 +36,19 @@ Galleria.run('#galleria', {
     
     flickrOptions: {
         // sort by interestingness
-        sort: 'interestingness-desc'
+        sort: 'interestingness-desc',
+        max: 50
+    }
+});
+
+Galleria.run('#galleria2', {
+
+    // search flickr for "galleria"
+    flickr: 'set:72157673910733655',
+    
+    flickrOptions: {
+        // sort by interestingness
+        sort: 'interestingness-desc',
+        max: 50
     }
 });

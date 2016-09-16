@@ -4,6 +4,7 @@ html,
 body {
   height: 100%;
   width: 100%;
+  font-family: 'Open Sans', sans-serif;
 }
 
 ul {
@@ -33,10 +34,8 @@ ul {
 #logo {
   display: block;
   margin: 0 auto;
-  margin-top: 120px;
-
+  margin-top: 100px;
   z-index: 1;
-  width: 200px;
 }
 
 .vert-text {
@@ -46,10 +45,10 @@ ul {
 }
 
 .vert-text h1 {
-  font-size: 3em;
-  line-height: 1.2em;
+  font-size: 24px;
+  line-height: 1.2;
   font-weight: 200;
-  padding: 40px 120px 50px;
+  padding: 5px 120px 10px;
   color: rgb(255, 255, 255);
   text-shadow: 0px 2px 8px rgba(0, 0, 0, 0.5);
 }
@@ -58,6 +57,10 @@ ul {
 
 .layout-section {
   margin-bottom: 20px
+}
+
+.layout-section-large {
+  margin-bottom: 30px
 }
 
 /* Button */
@@ -73,6 +76,15 @@ ul {
 a.btn-red:hover {
   color: #eee;
   text-decoration: none;
+}
+
+.btn-accent {
+  border-color: #a0eccb;
+}
+
+.btn-accent:hover {
+  background-color: #5ebd94;
+  color: white;
 }
 
 /* Typography */
@@ -184,7 +196,7 @@ a.btn-red:hover {
   height: 100%;
   width: 100%;
   position: relative;
-  background: url(../img/bg-s2.jpg) no-repeat center center fixed;
+  background: url(../img/bg-s3.jpg) no-repeat center center fixed;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -298,18 +310,20 @@ i.scroll:hover {
 /* Bootstrap Override */
 
 p, li, td {
-  color: #312F2F;
+  color: #545454;
 }
 
 h2 {
   font-family: 'Lobster', "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-weight: 400;
-  margin-bottom: 20px;
+  margin: 30px 0;
   font-size: 32px;
 }
 
 h3 {
   font-size: 22px;
+  border-left: 5px solid #c41411;
+  padding-left: 15px;
 }
 
 a {
@@ -322,7 +336,7 @@ a:hover, a:focus {
 
 /* This rule is read by Galleria to define the gallery height: */
 
-#galleria{
+.galleria{
   height: 450px;
 }
 
@@ -331,7 +345,7 @@ a:hover, a:focus {
 @media (max-width: 768px) {
 
   .header {
-    background: url(../goicuon-lores.jpg) no-repeat center center fixed;
+    background: url(../bg-s3.jpg) no-repeat center center fixed;
   }
 
   .vert-text h1 {
@@ -358,6 +372,17 @@ img.map {
   color: #fff;
 }
 
+#top .cta {
+  padding: 20px 56px;
+}
+
+/* Navbar */
+
+.navbar-default {
+  background-color: white;
+  border-color: #a0eccb;
+}
+
 .navbar-default .navbar-nav > li > a.hot {
   font-weight: bold;
   color: #E26464;
@@ -367,14 +392,15 @@ img.map {
   text-decoration: underline;
 }
 
-#about p {
-  text-align: justify;
+.navbar-default .navbar-nav>.active>a, .navbar-default .navbar-nav>.active>a:hover, .navbar-default .navbar-nav>.active>a:focus {
+  background-color: #f9f9f9;
+  border-bottom: 3px solid #5ebd94;
+  margin-bottom: -3px;
 }
 
-#about li {
-  text-align: justify
-}
+/* Flex */
 
-#top .cta {
-  padding: 20px 56px;
+.flex-container {
+  display: flex;
+  align-items: center;
 }
