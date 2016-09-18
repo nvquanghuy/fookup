@@ -11,21 +11,6 @@ ul {
   padding-left: 15px;
 }
 
-.btn{
-
-  background: transparent;
-  color: #FFF;
-  border-radius: 2px;
-
-  /* CSS Transition */
-  -webkit-transition: background .2s ease-in-out, border .2s ease-in-out;
-  -moz-transition: background .2s ease-in-out, border .2s ease-in-out;
-  -ms-transition: background .2s ease-in-out, border .2s ease-in-out;
-  -o-transition: background .2s ease-in-out, border .2s ease-in-out;
-  transition: background .2s ease-in-out, border .2s ease-in-out;
-
-}
-
 .col-center {
   float: none;
   margin: 0 auto;
@@ -80,6 +65,7 @@ a.btn-red:hover {
 
 .btn-accent {
   border-color: #a0eccb;
+  color: white;
 }
 
 .btn-accent:hover {
