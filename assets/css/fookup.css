@@ -331,7 +331,7 @@ a:hover, a:focus {
 @media (max-width: 768px) {
 
   .header {
-    background: url(../bg-s3.jpg) no-repeat center center fixed;
+    background: url(../img/bg-s3.jpg) no-repeat center center fixed;
   }
 
   .vert-text h1 {
